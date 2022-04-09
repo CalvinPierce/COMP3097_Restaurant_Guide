@@ -9,11 +9,53 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var descrip: UILabel!
+    @IBOutlet weak var tags: UILabel!
+    @IBOutlet weak var phone: UILabel!
+    @IBOutlet weak var editBtn: UIButton!
+    
+    var selectedRestaurant: Restaurant? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(selectedRestaurant != nil){
+            name.text = selectedRestaurant?.name
+            address.text = selectedRestaurant?.address
+            rating.text = selectedRestaurant?.rating.stringValue
+            descrip.text = selectedRestaurant?.descrip
+            tags.text = selectedRestaurant?.tags
+            phone.text = selectedRestaurant?.phone
+        }
 
         // Do any additional setup after loading the view.
         
+    }
+    @IBAction func refresh(_ sender: Any) {
+        name.text = selectedRestaurant?.name
+        address.text = selectedRestaurant?.address
+        rating.text = selectedRestaurant?.rating.stringValue
+        descrip.text = selectedRestaurant?.descrip
+        tags.text = selectedRestaurant?.tags
+        phone.text = selectedRestaurant?.phone
+    }
+    
+    func refreshData(){
+        name.text = selectedRestaurant?.name
+        address.text = selectedRestaurant?.address
+        rating.text = selectedRestaurant?.rating.stringValue
+        descrip.text = selectedRestaurant?.descrip
+        tags.text = selectedRestaurant?.tags
+        phone.text = selectedRestaurant?.phone
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "editRestaurant"){
+            let editRestaurant = segue.destination as? EditRestaurantViewController
+            editRestaurant?.selectedRestaurant = selectedRestaurant
+        }
     }
     
 

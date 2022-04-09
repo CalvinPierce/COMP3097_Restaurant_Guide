@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181B62D72801CD9B0053F7D3 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B62D62801CD9B0053F7D3 /* RestaurantCell.swift */; };
+		181B62D92801CDB80053F7D3 /* RestaurantTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B62D82801CDB80053F7D3 /* RestaurantTableView.swift */; };
+		181B62DB2801D27A0053F7D3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B62DA2801D27A0053F7D3 /* Restaurant.swift */; };
+		181B62DE2801DED50053F7D3 /* RestaurantCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 181B62DC2801DED50053F7D3 /* RestaurantCoreData.xcdatamodeld */; };
+		181B62E02801F3070053F7D3 /* EditRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B62DF2801F3070053F7D3 /* EditRestaurantViewController.swift */; };
 		1824F96D27DE7720001F8990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824F96C27DE7720001F8990 /* AppDelegate.swift */; };
 		1824F96F27DE7720001F8990 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824F96E27DE7720001F8990 /* SceneDelegate.swift */; };
-		1824F97127DE7720001F8990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824F97027DE7720001F8990 /* ViewController.swift */; };
+		1824F97127DE7720001F8990 /* AddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824F97027DE7720001F8990 /* AddRestaurantViewController.swift */; };
 		1824F97427DE7720001F8990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1824F97227DE7720001F8990 /* Main.storyboard */; };
 		1824F97627DE7721001F8990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1824F97527DE7721001F8990 /* Assets.xcassets */; };
 		1824F97927DE7721001F8990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1824F97727DE7721001F8990 /* LaunchScreen.storyboard */; };
@@ -17,10 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181B62D62801CD9B0053F7D3 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		181B62D82801CDB80053F7D3 /* RestaurantTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableView.swift; sourceTree = "<group>"; };
+		181B62DA2801D27A0053F7D3 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		181B62DD2801DED50053F7D3 /* RestaurantCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RestaurantCoreData.xcdatamodel; sourceTree = "<group>"; };
+		181B62DF2801F3070053F7D3 /* EditRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRestaurantViewController.swift; sourceTree = "<group>"; };
 		1824F96927DE7720001F8990 /* RestaurantGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1824F96C27DE7720001F8990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1824F96E27DE7720001F8990 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1824F97027DE7720001F8990 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1824F97027DE7720001F8990 /* AddRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewController.swift; sourceTree = "<group>"; };
 		1824F97327DE7720001F8990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1824F97527DE7721001F8990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1824F97827DE7721001F8990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,12 +70,17 @@
 			children = (
 				1824F96C27DE7720001F8990 /* AppDelegate.swift */,
 				1824F96E27DE7720001F8990 /* SceneDelegate.swift */,
-				1824F97027DE7720001F8990 /* ViewController.swift */,
+				1824F97027DE7720001F8990 /* AddRestaurantViewController.swift */,
 				1824F98027DE830B001F8990 /* DetailsViewController.swift */,
 				1824F97227DE7720001F8990 /* Main.storyboard */,
 				1824F97527DE7721001F8990 /* Assets.xcassets */,
 				1824F97727DE7721001F8990 /* LaunchScreen.storyboard */,
 				1824F97A27DE7721001F8990 /* Info.plist */,
+				181B62DA2801D27A0053F7D3 /* Restaurant.swift */,
+				181B62D62801CD9B0053F7D3 /* RestaurantCell.swift */,
+				181B62D82801CDB80053F7D3 /* RestaurantTableView.swift */,
+				181B62DC2801DED50053F7D3 /* RestaurantCoreData.xcdatamodeld */,
+				181B62DF2801F3070053F7D3 /* EditRestaurantViewController.swift */,
 			);
 			path = RestaurantGuide;
 			sourceTree = "<group>";
@@ -141,9 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1824F97127DE7720001F8990 /* ViewController.swift in Sources */,
+				181B62D72801CD9B0053F7D3 /* RestaurantCell.swift in Sources */,
+				1824F97127DE7720001F8990 /* AddRestaurantViewController.swift in Sources */,
 				1824F96D27DE7720001F8990 /* AppDelegate.swift in Sources */,
+				181B62DE2801DED50053F7D3 /* RestaurantCoreData.xcdatamodeld in Sources */,
+				181B62DB2801D27A0053F7D3 /* Restaurant.swift in Sources */,
+				181B62E02801F3070053F7D3 /* EditRestaurantViewController.swift in Sources */,
 				1824F96F27DE7720001F8990 /* SceneDelegate.swift in Sources */,
+				181B62D92801CDB80053F7D3 /* RestaurantTableView.swift in Sources */,
 				1824F98127DE830B001F8990 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +382,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		181B62DC2801DED50053F7D3 /* RestaurantCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				181B62DD2801DED50053F7D3 /* RestaurantCoreData.xcdatamodel */,
+			);
+			currentVersion = 181B62DD2801DED50053F7D3 /* RestaurantCoreData.xcdatamodel */;
+			path = RestaurantCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1824F96127DE7720001F8990 /* Project object */;
 }
