@@ -50,7 +50,17 @@ class DetailsViewController: UIViewController {
         tags.text = selectedRestaurant?.tags
         phone.text = selectedRestaurant?.phone
     }
-    
+    @IBAction func shareAction(_ sender : UIButton){
+        let imageToShare = [self.view.asImage()]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+            // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+
+            // present the view controller
+            self.present(activityViewController, animated: true, completion: nil)
+
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "editRestaurant"){
             let editRestaurant = segue.destination as? EditRestaurantViewController

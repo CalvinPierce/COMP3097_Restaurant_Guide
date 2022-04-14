@@ -224,7 +224,7 @@
         <!--Restaurant Details-->
         <scene sceneID="zPW-yP-KTi">
             <objects>
-                <viewController id="Qrr-Gf-UkI" customClass="DetailsViewController" customModule="RestaurantGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="Qrr-Gf-UkI" customClass="DetailsViewController" customModule="RestaurantGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wjO-sM-ydw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,6 +252,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Share"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="Qrr-Gf-UkI" eventType="touchUpInside" id="JoL-L0-kSy"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="XoJ-sL-2zc">
                                 <rect key="frame" x="19.5" y="144" width="375" height="238"/>
@@ -519,7 +522,7 @@
                                 <rect key="frame" x="0.0" y="222" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchRestaurantCell" rowHeight="322" id="pFM-ld-ov5" customClass="SearchRestaurantCell" customModule="RestaurantGuide" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchRestaurantCell" rowHeight="322" id="pFM-ld-ov5" customClass="SearchRestaurantCell" customModule="RestaurantGuide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="322"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pFM-ld-ov5" id="4ZK-dE-ET6">
@@ -558,7 +561,7 @@
                                                         <constraint firstAttribute="height" constant="160" id="zA2-d3-CaK"/>
                                                     </constraints>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7R-NE-7v6">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7R-NE-7v6">
                                                     <rect key="frame" x="157" y="272" width="100" height="40"/>
                                                     <color key="backgroundColor" red="0.62060981989999997" green="0.767039001" blue="0.17968723180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
