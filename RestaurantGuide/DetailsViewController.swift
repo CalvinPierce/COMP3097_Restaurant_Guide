@@ -121,7 +121,6 @@ class DetailsViewController: UIViewController, MKMapViewDelegate {
         }
         
     }
-    }
     
     @IBAction func shareAction(_ sender: UIButton) {
         let imageToShare = [self.view.asImage()]
