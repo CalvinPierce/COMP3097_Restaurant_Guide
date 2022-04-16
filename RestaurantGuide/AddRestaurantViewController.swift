@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import GooglePlaces
+import SwiftyJSON
 
 class AddRestaurantViewController: UIViewController, UITextFieldDelegate {
     
@@ -19,6 +20,7 @@ class AddRestaurantViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var rating: UITextField!
     
     @IBOutlet weak var status: UILabel!
+    var addressText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,7 @@ class AddRestaurantViewController: UIViewController, UITextFieldDelegate {
         autocompleteController.autocompleteFilter = filter
 
         // Display the autocomplete view controller.
-        //present(autocompleteController, animated: true, completion: nil)
+        present(autocompleteController, animated: true, completion: nil)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -115,13 +117,51 @@ class AddRestaurantViewController: UIViewController, UITextFieldDelegate {
             print("Error saving restaurant")
         }
     }
-    
 }
 extension AddRestaurantViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-    address.text = "\(place.name!)"
+      
+      // Create URL
+      let url = URL(string: "https://maps.googleapis.com/maps/api/place/details/json?fields=formatted_address&place_id=\(place.placeID!)&key=AIzaSyAeVSrX3nnWF_2aIMXfinq-oCy9IbfMB68")
+      guard let requestUrl = url else { fatalError() }
+
+      // Create URL Request
+      var request = URLRequest(url: requestUrl)
+
+      // Specify HTTP Method to use
+      request.httpMethod = "GET"
+
+      // Send HTTP Request
+      let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+          
+          // Check if Error took place
+          if let error = error {
+              print("Error took place \(error)")
+              return
+          }
+          
+          // Read HTTP Response Status code
+          if let response = response as? HTTPURLResponse {
+              print("Response HTTP Status code: \(response.statusCode)")
+          }
+          
+          // Convert HTTP Response Data to a simple String
+          if let data = data, let dataString = String(data: data, encoding: .utf8) {
+              //print("Response data string:\n \(dataString)")
+              let json = JSON(data)
+              self.addressText = json["result"]["formatted_address"].string!
+              //print(self.addressText)
+              changeTextField()
+          }
+      }
+      task.resume()
+      func changeTextField(){
+          DispatchQueue.main.async {
+              self.address.text = self.addressText
+          }
+      }
     dismiss(animated: true, completion: nil)
   }
 

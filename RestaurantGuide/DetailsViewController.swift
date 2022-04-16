@@ -82,6 +82,45 @@ class DetailsViewController: UIViewController, MKMapViewDelegate {
         descrip.text = selectedRestaurant?.descrip
         tags.text = selectedRestaurant?.tags
         phone.text = selectedRestaurant?.phone
+        
+        //..........new...........
+        let addr = address.text
+        if let loc = addr {
+            
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString(loc, completionHandler: {
+                                            placemarks, error in
+                
+                if error != nil {print(error!); return}
+                
+                if let placemarks = placemarks {
+                    
+                    let placemark = placemarks[0]
+                    
+                    let annotation = MKPointAnnotation()
+                    annotation.title = addr
+                    //annotation.subtitle = self.folderName
+                    
+                    if let addr = placemark.location {
+                        annotation.coordinate = addr.coordinate
+                        
+                        self.viewMap.showAnnotations([annotation], animated: true)
+                        self.viewMap.selectAnnotation(annotation, animated: true)
+                    }
+                }
+                
+            }
+        )
+            
+            viewMap.delegate = self
+            
+            viewMap.showsCompass = true
+            
+            viewMap.showsTraffic = true
+            
+        }
+        
+    }
     }
     
     @IBAction func shareAction(_ sender: UIButton) {
