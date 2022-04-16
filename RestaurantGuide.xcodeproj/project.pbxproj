@@ -29,6 +29,7 @@
 		1878D696280606EE002F8C1A /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1878D695280606EE002F8C1A /* GooglePlaces.framework */; };
 		18F030112808E82F00592097 /* SearchRestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0300F2808E82F00592097 /* SearchRestaurantCell.swift */; };
 		18F030122808E82F00592097 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F030102808E82F00592097 /* SearchViewController.swift */; };
+		18F03017280B0D4A00592097 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 18F03016280B0D4A00592097 /* SwiftyJSON */; };
 		5C830A9D2809ED0900B474C4 /* zoomMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C830A9C2809ED0900B474C4 /* zoomMap.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 			files = (
 				1878D6862805F4F2002F8C1A /* CoreGraphics.framework in Frameworks */,
 				1878D6882805F4F9002F8C1A /* CoreLocation.framework in Frameworks */,
+				18F03017280B0D4A00592097 /* SwiftyJSON in Frameworks */,
 				1878D68A2805F509002F8C1A /* libc++.tbd in Frameworks */,
 				1878D68C2805F512002F8C1A /* libz.tbd in Frameworks */,
 				1878D68E2805F519002F8C1A /* QuartzCore.framework in Frameworks */,
@@ -150,6 +152,7 @@
 			);
 			name = RestaurantGuide;
 			packageProductDependencies = (
+				18F03016280B0D4A00592097 /* SwiftyJSON */,
 			);
 			productName = RestaurantGuide;
 			productReference = 1824F96927DE7720001F8990 /* RestaurantGuide.app */;
@@ -180,6 +183,7 @@
 			);
 			mainGroup = 1824F96027DE7720001F8990;
 			packageReferences = (
+				18F03015280B0D4A00592097 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 1824F96A27DE7720001F8990 /* Products */;
 			projectDirPath = "";
@@ -454,6 +458,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18F03015280B0D4A00592097 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18F03016280B0D4A00592097 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18F03015280B0D4A00592097 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		181B62DC2801DED50053F7D3 /* RestaurantCoreData.xcdatamodeld */ = {
